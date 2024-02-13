@@ -1,0 +1,15 @@
+{% extends "gabarit.twig" %}
+
+{% block titre %}Page de Contact{% endblock %}
+
+{% block contenu %}
+   <h1 class="h1">Selection {{ employes.Titre }}</h1>
+   <table class="table">
+      {% for departement in employes.Departements %}
+         <tr><th>{{ departement.Service }}</th><th></th><th></th></tr>
+         {% for personnel in departement.Personnel %}
+            <tr><td>{{ personnel.prenom }} {{ personnel.nom }}</td><td><a>{{ personnel.mel }}</a></td><td>{{ personnel.tel }}</td></tr>
+         {% endfor %}
+      {% endfor %}
+   </table>
+{% endblock %}
